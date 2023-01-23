@@ -1,6 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200;400;500&family=Vidaloka&display=swap');
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 /*
 font-family: 'Catamaran', sans-serif;
 font-family: 'Vidaloka', serif;
 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Catamaran', sans-serif;
+    transition: color 0.2s;
+}
