@@ -16,6 +16,16 @@ export default {
     </div>
 </template>
 
-<style lang="">
-    
+<style lang="scss" scoped>
+
+@use '../styles/partials/variables' as *;
+    .menuvoice{
+        margin: 0 20px;
+        padding: 0px 5px 30px 5px;
+    }
+
+    .menuactive{
+        color: $food-orange;
+        border-bottom: 3px solid $food-orange;
+    }
 </style>

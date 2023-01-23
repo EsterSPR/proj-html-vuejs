@@ -1,13 +1,8 @@
 <script>
 
-import AppSocial from './AppSocial.vue';
+import AppMenu from './AppMenu.vue';
 
 export default {
-    props:{
-        voices: String,
-        urls: URL,
-        actives: Boolean,
-    },
   data(){
     return{
         menuHeader: [
@@ -40,11 +35,6 @@ export default {
                     voice: 'Contact',
                     url: '#',
                     active: false,
-                },
-                {
-                    voice: '<fa icon="magnifying-glass" />',
-                    url: '#',
-                    active: false,
                 }
             ],
             socialIcons: [
@@ -52,45 +42,51 @@ export default {
                     name: 'Facebook',
                     ico: 'facebook',
                     link: '#',
+                    footer: true,
                 },
                 {
                     name: 'Instagram',
                     ico: 'instagram',
                     link: '#',
+                    footer: true,
                 },
                 {
                     name: 'Twitter',
                     ico: 'twitter',
                     link: '#',
+                    footer: true,
                 },
                 {
                     name: 'YouTube',
                     ico: 'youtube',
                     link: '#',
+                    footer: true,
                 },
                 {
                     name: 'TikTok',
                     ico: 'tiktok',
                     link: '#',
+                    footer: false,
                 },
                 {
                     name: 'Pinterest',
                     ico: 'pinterest',
                     link: '#',
+                    footer: false,
                 }
             ]
         }
   },
   components:{
-        AppSocial,
-    },
+    AppMenu
+  }
 }
 </script>
 
 <template>
 <header class="container">
     
-  <div class="row">
+  <div class="row mb-4">
     <div class="col-3"> <a href="#" class="mx-2">Download App <span class="badge">iOS</span></a> <a href="#">Advertise with us</a> </div>
     <div class="col-6 text-center"><img src="img/avada-food-logo-2x.png" alt="logo" class="logo-header"></div>
     <div class="col-3 d-flex text-right">
@@ -101,15 +97,12 @@ export default {
   </div>
 
   <div class="row">
-    <div class="col-12 d-flex">
-        <div v-for="item, index in menuHeader" :key="index" 
+    <div class="col-12 d-flex justify-content-center">
+        <AppMenu v-for="item, index in menuHeader" :key="index" 
         :voices="item.voice" 
         :urls="item.url" 
-        :actives="item.active">
-            <a :href="urls">
-                {{ voices }}
-            </a>
-        </div>
+        :actives="item.active" />
+        <a href="#" class="menuvoice"><fa icon="magnifying-glass" /></a>
     </div>
   </div>
 
@@ -125,6 +118,7 @@ export default {
         width: 100vw;
         padding: 30px;
         background-color: $food-lightgray;
+        font-family: 'Catamaran', sans-serif !important;
 
         .badge{
                 background-color: $food-orange;
@@ -145,6 +139,10 @@ export default {
 
         .icon:hover {
             background-color: rgba(255, 255, 255, 1)
+        }
+
+        .menuvoice{
+            margin: 0 20px;
         }
 
     }
