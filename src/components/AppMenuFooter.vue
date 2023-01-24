@@ -19,13 +19,17 @@ export default {
 <style lang="scss" scoped>
 
 @use '../styles/partials/variables' as *;
+
+    .menu{
+        margin: 0 0 25px 0;
+    }
     .menuvoice{
-        margin: 0 20px;
-        padding: 0px 5px 30px 5px;
+        padding: 0px 150px 0px 0px;
+        font-weight: 200;
     }
 
-    .menuactive{
+    .menuvoice:hover{
         color: $food-orange;
-        border-bottom: 3px solid $food-orange;
+        border-right: 2px solid $food-orange;
     }
 </style>
