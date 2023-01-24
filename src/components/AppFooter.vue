@@ -17,7 +17,7 @@ export default {
                     active: false,
                 },
                 {
-                    voice: 'Blog',
+                    voice: 'Blog ',
                     url: '#',
                     active: false,
                 },
@@ -137,11 +137,11 @@ export default {
         </div>
 
         <div class="row">
-          <div class="col-12"><img src="../../public/img/download-android.png" alt="download"></div>
+          <div class="col-12"><a href="#"><img src="../../public/img/download-android.png" alt="download"></a></div>
         </div>
 
         <div class="row">
-          <div class="col-12"><img src="../../public/img/download-app-store.png" alt="download"></div>
+          <div class="col-12"><a href="#"><img src="../../public/img/download-app-store.png" alt="download"></a></div>
         </div>
       </div>
     </div>
@@ -177,7 +177,7 @@ footer{
   }
 
   .contacts-footer{
-    margin: 10px 0 10px -10px;
+    margin: 5px 0 5px -10px;
     padding-right: 20px;
     color: $food-darkgray;
 
@@ -189,6 +189,7 @@ footer{
   h6{
       color: $food-orange;
       font-weight: bold;
+      margin-bottom: 20px;
     }
 
   img[alt="download"]{

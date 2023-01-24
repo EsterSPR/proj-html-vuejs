@@ -25,7 +25,7 @@ export default {
     }
     .menuvoice{
         padding: 0px 150px 0px 0px;
-        font-weight: 200;
+        font-weight: 100;
     }
 
     .menuvoice:hover{

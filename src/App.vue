@@ -1,10 +1,12 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+import AppMain from './components/AppMain.vue';
 
 export default {
   components:{
     AppHeader,
+    AppMain,
     AppFooter
   },
 }
@@ -12,6 +14,7 @@ export default {
 
 <template>
   <AppHeader />
+  <AppMain />
   <AppFooter />
 </template>
 
@@ -28,7 +31,18 @@ body{
 
     a:hover{
     color: $food-orange;
-}
+  }
+
+  .recipe-date{
+    color: $food-darkgray;
+  }
+
+  .recipe-ico{
+    color: $food-orange;
+    background-color: $food-white;
+    padding: 12px 10px;
+    border-radius: 50%;
+  }
 }
   
 </style>
