@@ -60,22 +60,47 @@ export default {
                 {
                     img: '../../public/img/Yogurt-Nan-1200x790.jpg',
                     recipe: 'Lunch Favourite with Salad, Naan And Beans',
+                    main: true,
                 },
                 {
                     img: '../../public/img/Mixed-fruits-1200x790.jpg',
                     recipe: 'Fruit Platter with Banana, Mango, Berries and Orange',
+                    main: false,
                 },
                 {
                     img: '../../public/img/r-rachel-park-366508-unsplash-min-1200x790.jpg',
                     recipe: 'Breakfast Delight With Strawberry, Egg And Fruits',
+                    main: false,
                 },
                 {
                     img: '../../public/img/r-michelle-tsang-500721-unsplash-min-1200x790.jpg',
                     recipe: 'Ice Cream Heaven With Vanilla, Chocolate And Pistachio',
+                    main: false,
                 },
                 {
                     img: '../../public/img/quick-summer-drink-460x295.jpg',
                     recipe: 'Video Recipe: How to Make a Cool Summer Drink',
+                    main: false,
+                },
+                {
+                    img: '../../public/img/r-maarten-van-den-heuvel-400626-unsplash-min-460x295.jpg',
+                    recipe: 'Ketogenic Diet Recipe with Avocado',
+                    main: false,
+                },
+                {
+                    img: '../../public/img/perfect-cosmopolitan-460x295.jpg',
+                    recipe: 'Video Recipe: The Perfect Cosmopolitan',
+                    main: false,
+                },
+                {
+                    img: '../../public/img/fi2x-6-460x295.jpg',
+                    recipe: 'Summer Cheese Platter with Berries, Crackers and Wine',
+                    main: false,
+                },
+                {
+                    img: '../../public/img/r-brooke-lark-96398-unsplash-min-460x295.jpg',
+                    recipe: 'Strawberry Fruit Pies Served With Tea',
+                    main: false,
                 },
             ]
         }
@@ -116,6 +141,68 @@ export default {
             </div>
         </div>
     </div>
+
+    <div class="popular-recipes-container">
+        <div class="row mb-5">
+            <div class="col-4"></div>
+            <div class="col-4 text-center">
+                <h5>POPULAR RECIPES</h5>
+                <p>Aliquam erat volutpat. Ut quis ligula a magna blandit finibus. Suspendisse maximus lacus non nunc lacinia lobortis.</p>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <div v-for="rec, index in popularRecipes" class="foodie-card" :class="(rec.main === false) ? ' d-none' : ''">
+                    <img :src="rec.img" class="foodie-card-image">
+                    <div class="foodie-card-overlay">
+                        <div class="foodie-overlay-text recipe-title">
+                            <fa icon="link" class="recipe-ico" />
+                            <h5>{{rec.recipe}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popular-recipes-main" v-for="rec, index in popularRecipes" :class="(rec.main === false) ? ' d-none' : ''">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="recipe-title">{{rec.recipe}}</h4>
+                            <a href="#">Bakery</a>, <a href="#">Featured</a>, <a href="#">Healthy</a>, <a href="#">Latest Recipes</a>, <a href="#">Staff Picks</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12"><hr></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Suspendisse at semper odio. Nam fringilla scelerisque tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec tincidunt posuere ornare. Phasellus placerat odio non feugiat sollicitudin. Integer vitae elementum ex. Sed porttitor, diam eget convallis volutpat, arcu tellus facilisis nulla, id dignissim orci leo id</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="main-button">LEARN MORE</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6 d-flex flex-wrap">
+                <div v-for="rec, index in popularRecipes" class="foodie-card popular-recipes-card" :class="(rec.main === true) ? ' d-none' : ''">
+                    <img :src="rec.img" class="foodie-card-image">
+                    <div class="foodie-card-overlay">
+                        <div class="foodie-overlay-text recipe-title">
+                            <fa icon="link" class="recipe-ico" />
+                            <h5>{{rec.recipe}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -150,18 +237,10 @@ export default {
         }
     }
 
-    .foodie-journal-container{
-        width: calc(100% - 200px);
-        height: auto;
-        padding: 30px;
-        margin: -100px 100px 100px 100px;
-        background-color: $food-white;
-
-        .foodie-card {
+    .foodie-card {
             position: relative;
             transition: all .5s ease-in;
         }
-
 
         .foodie-card-image {
             display: block;
@@ -199,5 +278,49 @@ export default {
             transform: translate(-50%, -50%);
             text-align: center;
         }
+
+    .foodie-journal-container{
+        width: calc(100% - 200px);
+        height: auto;
+        padding: 30px;
+        margin: -100px 100px 100px 100px;
+        background-color: $food-white;
+    }
+
+    .popular-recipes-container{
+        padding: 0 100px;
+
+        p{
+            color: $food-darkgray;
+        }
+
+        .popular-recipes-card{
+            margin: 0 5px 10px 5px;
+            width: calc(50% - 10px)
+        }
+
+        .popular-recipes-main{
+            background-color: $food-white;
+            padding: 50px;
+
+            p{
+                font-size: 13pt;
+                line-height: 35px;
+                text-align: justify;
+            }
+        }
+    }
+
+    .main-button{
+        padding: 10px 30px;
+        background-color: $food-orange;
+        border: none;
+        color: $food-white;
+        font-weight: bolder;
+        transition: 0.3s;
+    }
+
+    .main-button:hover{
+        background-color: $food-darkorange;
     }
 </style>

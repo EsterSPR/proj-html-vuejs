@@ -24,6 +24,7 @@ export default {
 
 body{
     background-color: $food-lightgray;
+    font-family: 'Catamaran', sans-serif !important;
 
     a{
       color: $food-black;

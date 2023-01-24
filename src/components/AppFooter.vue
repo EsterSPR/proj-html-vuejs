@@ -64,7 +64,7 @@ export default {
 
 <template>
   <footer>
-    <div class="row">
+    <div class="row footer-top">
       <div class="col-3">
         <div class="row">
           <div class="col align-items-center">
@@ -145,6 +145,10 @@ export default {
         </div>
       </div>
     </div>
+
+    <div class="footer-bottom">
+      © Copyright 2012 - 2019 • Avada Food by <a href="#">Theme Fusion</a> • All Rights Reserved • Powered by <a href="#">WordPress</a>
+    </div>
   </footer>
 </template>
 
@@ -154,11 +158,14 @@ export default {
 
 footer{
   width: 100vw;
-  background-color: $food-lightgray;
-  padding: 70px 100px;
+  background-color: $food-white;
   font-family: 'Catamaran', sans-serif;
+  margin-top: 50px;
 
-  img[alt="logo"]{
+  .footer-top{
+    padding: 70px 100px;
+
+    img[alt="logo"]{
     width: 200px;
     margin-bottom: 20px;
   }
@@ -195,6 +202,15 @@ footer{
   img[alt="download"]{
       width: 200px;
       margin: 5px 0;
+    }
+  }
+
+    .footer-bottom{
+      background-color: $food-lightgray;
+      padding: 30px;
+      text-align: center;
+      width: 100%;
+      color: $food-darkgray;
     }
 }
   
