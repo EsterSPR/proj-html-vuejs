@@ -85,7 +85,7 @@ export default {
     <div class="col-6 text-center"><img src="img/avada-food-logo-2x.png" alt="logo" class="logo-header"></div>
     <div class="col-3 d-flex text-right">
         <div v-for="icon, index in socialIcons" :key="index" class="header-ico-container">
-            <span tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom" :data-bs-content="icon.name"> <a :href="icon.link"><fa :icon="['fab', icon.ico]" class="icon" /> </a> </span>
+            <a :href="icon.link"><fa :icon="['fab', icon.ico]" class="icon" /> </a>
         </div>
     </div>
   </div>

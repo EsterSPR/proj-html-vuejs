@@ -160,10 +160,10 @@ footer{
   width: 100vw;
   background-color: $food-white;
   font-family: 'Catamaran', sans-serif;
-  margin-top: 50px;
 
   .footer-top{
     padding: 70px 100px;
+    margin-right: 0 !important;
 
     img[alt="logo"]{
     width: 200px;
@@ -177,10 +177,11 @@ footer{
     height: 20px;
     padding: 10px;
     border-radius: 5px;
+    transition: 0.3s;
   }
 
   .icon:hover {
-      background-color: rgba(255, 255, 255, 1)
+    color: lighten($color: $food-darkgray, $amount: 15);
   }
 
   .contacts-footer{

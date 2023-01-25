@@ -30,46 +30,55 @@ export default {
                     img: '../../public/img/Yogurt-Nan-1200x790.jpg',
                     recipe: 'Lunch Favourite with Salad, Naan And Beans',
                     main: true,
+                    bottom: true,
                 },
                 {
                     img: '../../public/img/Mixed-fruits-1200x790.jpg',
                     recipe: 'Fruit Platter with Banana, Mango, Berries and Orange',
                     main: false,
+                    bottom: true,
                 },
                 {
                     img: '../../public/img/r-rachel-park-366508-unsplash-min-1200x790.jpg',
                     recipe: 'Breakfast Delight With Strawberry, Egg And Fruits',
                     main: false,
+                    bottom: true,
                 },
                 {
                     img: '../../public/img/r-michelle-tsang-500721-unsplash-min-1200x790.jpg',
                     recipe: 'Ice Cream Heaven With Vanilla, Chocolate And Pistachio',
                     main: false,
+                    bottom: true,
                 },
                 {
                     img: '../../public/img/quick-summer-drink-460x295.jpg',
                     recipe: 'Video Recipe: How to Make a Cool Summer Drink',
                     main: false,
+                    bottom: false,
                 },
                 {
                     img: '../../public/img/r-maarten-van-den-heuvel-400626-unsplash-min-460x295.jpg',
                     recipe: 'Ketogenic Diet Recipe with Avocado',
                     main: false,
+                    bottom: false,
                 },
                 {
                     img: '../../public/img/perfect-cosmopolitan-460x295.jpg',
                     recipe: 'Video Recipe: The Perfect Cosmopolitan',
                     main: false,
+                    bottom: false,
                 },
                 {
                     img: '../../public/img/fi2x-6-460x295.jpg',
                     recipe: 'Summer Cheese Platter with Berries, Crackers and Wine',
                     main: false,
+                    bottom: false,
                 },
                 {
                     img: '../../public/img/r-brooke-lark-96398-unsplash-min-460x295.jpg',
                     recipe: 'Strawberry Fruit Pies Served With Tea',
                     main: false,
+                    bottom: false,
                 },
             ]
         }
@@ -107,7 +116,7 @@ export default {
                 </div>
                 </div>
                 <div class="foodie-card-undetext text-center mt-2">
-                    <h4 class="recipe-title">{{rec.recipe}}</h4>
+                    <h4 class="recipe-title"><a href="#">{{rec.recipe}}</a></h4>
                     <p>By <a href="#">admin</a> | <span class="recipe-date">March 25, 2019</span></p>
                 </div>
             </div>
@@ -140,7 +149,7 @@ export default {
                 <div class="popular-recipes-main" v-for="rec, index in popularRecipes" :class="(rec.main === false) ? ' d-none' : ''">
                     <div class="row">
                         <div class="col-12">
-                            <h4 class="recipe-title">{{rec.recipe}}</h4>
+                            <h4 class="recipe-title"><a href="#">{{rec.recipe}}</a></h4>
                             <a href="#">Bakery</a>, <a href="#">Featured</a>, <a href="#">Healthy</a>, <a href="#">Latest Recipes</a>, <a href="#">Staff Picks</a>
                         </div>
                     </div>
@@ -175,7 +184,36 @@ export default {
 
         </div>
     </div>
+
     <AppMainCategories />
+
+    <div class="subscribe">
+        <div class="subscribe-text-container">
+            <h2 class="recipe-title mb-3">Subscribe <span>&</span> Receive A Free eBook</h2>
+            <p>Aliquam erat volutpat. Ut quis ligula a magna blandit finibus. Suspendisse maximus lacus non nunc lacinia lobortis.</p>
+            <form class="row my-5">
+                <div class="col-8">
+                    <input type="email" class="form-control main-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insert your email ... *" required>
+                </div>
+                <div class="col-4">
+                    <button type="submit" class="main-button input-button">SUBSCRIBE</button>
+                </div>
+            </form>
+            <p class="subscribe-text-small">Cras porttitor pellentesque sem eu pretium.</p>
+        </div>
+    </div>
+
+    <div class="d-flex w-100">
+        <div v-for="rec, index in popularRecipes" class="foodie-card popular-recipes-card" :class="(rec.bottom === false) ? ' d-none' : ''">
+            <img :src="rec.img" class="foodie-card-image">
+            <div class="foodie-card-overlay">
+                <div class="foodie-overlay-text recipe-title">
+                    <fa icon="link" class="recipe-ico" />
+                    <h5>{{rec.recipe}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -295,5 +333,47 @@ export default {
 
     .main-button:hover{
         background-color: $food-darkorange;
+    }
+
+    .subscribe{
+        width: 100vw;
+        background-color: $food-white;
+        background-image: url(../../public/img/subscribe-sec-bg.png);
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        padding: 100px 200px 100px 200px;
+
+        .subscribe-text-container{
+            width: 700px;
+            padding: 50px;
+            margin: 0 auto;
+
+            span{
+                color: $food-orange;
+            }
+
+            p{
+                color: $food-darkgray;
+                font-size: 13pt;
+            }
+
+            .input-button{
+                height: 50px;
+                width: 100%;
+            }
+
+            .main-input{
+                height: 50px
+            }
+
+            .main-input:hover{
+                border-color: $food-orange;
+            }
+
+            .subscribe-text-small{
+                font-size: 10pt;
+            }
+        }
     }
 </style>
