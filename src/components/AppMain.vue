@@ -1,41 +1,10 @@
 <script>
+
+import AppMainCategories from './AppMainCategories.vue';
+
 export default {
     data(){
         return{
-            mainIcons: [
-                {
-                    icon: '../../public/img/drinks-recipes.png',
-                    title: 'DRINKS'
-                },
-                {
-                    icon: '../../public/img/soups-recipes.png',
-                    title: 'SOUPS'
-                },
-                {
-                    icon: '../../public/img/baking-recipes.png',
-                    title: 'BAKERY'
-                },
-                {
-                    icon: '../../public/img/dinner-recipes.png',
-                    title: 'DINNER'
-                },
-                {
-                    icon: '../../public/img/healthy-recipes.png',
-                    title: 'HEALTHY'
-                },
-                {
-                    icon: '../../public/img/staff-picks.png',
-                    title: 'STAFF PICKS'
-                },
-                {
-                    icon: '../../public/img/premium-recipes.png',
-                    title: 'APPETISERS'
-                },
-                {
-                    icon: '../../public/img/quick-easy-recipes.png',
-                    title: 'QUICK & EASY'
-                }
-            ],
             foodCorner:[
                 {
                     img: '../../public/img/single-post-img3-1200x790.jpg',
@@ -104,6 +73,9 @@ export default {
                 },
             ]
         }
+    },
+    components:{
+        AppMainCategories,
     }
 }
 </script>
@@ -177,7 +149,7 @@ export default {
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <p>Suspendisse at semper odio. Nam fringilla scelerisque tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec tincidunt posuere ornare. Phasellus placerat odio non feugiat sollicitudin. Integer vitae elementum ex. Sed porttitor, diam eget convallis volutpat, arcu tellus facilisis nulla, id dignissim orci leo id</p>
+                            <p>Suspendisse at semper odio. Nam fringilla scelerisque tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec tincidunt posuere ornare. Phasellus placerat odio non feugiat sollicitudin. Integer vitae elementum ex. Sed porttitor, diam eget convallis volutpat, arcu tellus facilisis nulla, id dignissim orci leo id.</p>
                         </div>
                     </div>
                     <div class="row">
@@ -203,6 +175,7 @@ export default {
 
         </div>
     </div>
+    <AppMainCategories />
 </template>
 
 <style lang="scss" scoped>
@@ -295,7 +268,7 @@ export default {
         }
 
         .popular-recipes-card{
-            margin: 0 5px 10px 5px;
+            margin: 0 5px 15px 5px;
             width: calc(50% - 10px)
         }
 

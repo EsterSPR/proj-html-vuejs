@@ -21,12 +21,29 @@ export default {
 @use '../styles/partials/variables' as *;
     .menuvoice{
         margin: 0 20px;
-        padding: 0px 10px 10px 10px;
         font-weight: bold;
+        display: inline-block;
+    }
+
+    .menuvoice::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $food-orange;
+        transition: width .3s;
+    }
+
+    .menuvoice:hover::after {
+        width: 100%;
     }
 
     .menuactive{
         color: $food-orange;
         border-bottom: 2px solid $food-orange;
+    }
+
+    .menuactive::after{
+        height: 0px;
     }
 </style>
